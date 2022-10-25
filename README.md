@@ -1,8 +1,8 @@
-# curriculum-databases-projects-template
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+# Vet Clinic Database
 
+> This repository consists of a relational database created as the initial data structure for a vet clinic implementing PostgreSQL.
 
 ## Getting Started
 
@@ -15,17 +15,10 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Lucas Mullen**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@mullenlucas](https://github.com/mullenlucas)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-mullen-447312119/)
 
 ## 🤝 Contributing
 
@@ -41,7 +34,8 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+- To all the collaborators for the Readme Template
+- The Microverse Team
 
 ## 📝 License
 

@@ -71,6 +71,8 @@ SELECT * FROM animals;
 
 -- # QUERIES #
 
+-- Tuesday Queries
+
 \echo Count how many animals are there:
 SELECT COUNT(*) FROM animals;
 
@@ -89,6 +91,24 @@ SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 \echo What is the average number of escape attempts per animal type of those born between 1990 and 2000:
 SELECT species, ROUND(AVG(escape_attempts)) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
 
-SELECT * FROM animals;
-SELECT * FROM owners;
-SELECT * FROM species;
+-- Wednesday Queries
+\echo Animals belonging to Melody Pond:
+SELECT name FROM animals JOIN owners ON owner_id = owners.id WHERE full_name = 'Melody Pond';
+
+\echo List all pokemon animals:
+SELECT animals.name FROM animals JOIN species ON species_id = species.id WHERE species.name = 'Pokemon';
+
+\echo List all owners and their animals:
+SELECT owners.full_name, animals.name FROM owners JOIN animals ON owner_id = owners.id;
+
+\echo How many animals are there per species:
+SELECT species.name, COUNT(*) FROM animals JOIN species ON species_id = species.id GROUP BY species.name;
+
+\echo List all Digimon owned by Jennifer Orwell:
+SELECT animals.name FROM animals JOIN species ON species_id = species.id JOIN owners ON owner_id = owners.id WHERE species.name = 'Digimon' AND owners.full_name = 'Jennifer Orwell';
+
+\echo List all animals owned by Dean Winchester that havent tried to escape:
+SELECT animals.name FROM animals JOIN owners ON owner_id = owners.id WHERE owners.full_name = 'Dean Winchester' AND escape_attempts = 0;
+
+\echo Who owns the most animals:
+SELECT owners.full_name, COUNT(*) FROM owners JOIN animals ON owner_id = owners.id GROUP BY owners.full_name ORDER BY COUNT(*) DESC LIMIT 1;

@@ -24,3 +24,16 @@ CREATE TABLE species (
     id SERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(60),
 );
+
+-- Delete species column from 'animals' table
+ALTER TABLE animals DROP COLUMN species;
+
+-- Add species_id column to 'animals' table
+ALTER TABLE animals ADD species_id INT;
+-- Add foreign key to 'animals' table
+ALTER TABLE animals ADD FOREIGN KEY (species_id) REFERENCES species (id);
+
+-- Add owner_id column to 'animals' table
+ALTER TABLE animals ADD owner_id INT;
+-- Add foreign key to 'animals' table
+ALTER TABLE animals ADD FOREIGN KEY (owner_id) REFERENCES owners (id);

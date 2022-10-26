@@ -11,3 +11,16 @@ CREATE TABLE animals (
 
 -- Add a column species of type string to your animals table
 ALTER TABLE animals ADD species VARCHAR(60);
+
+-- Create 'owners' table
+CREATE TABLE owners (
+    id SERIAL NOT NULL PRIMARY KEY,
+    full_name VARCHAR(150),
+    age INT NOT NULL;
+);
+
+-- Create 'species' table
+CREATE TABLE species (
+    id SERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(60),
+);

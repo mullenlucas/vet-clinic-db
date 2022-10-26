@@ -16,13 +16,13 @@ ALTER TABLE animals ADD species VARCHAR(60);
 CREATE TABLE owners (
     id SERIAL NOT NULL PRIMARY KEY,
     full_name VARCHAR(150),
-    age INT NOT NULL;
+    age INT NOT NULL
 );
 
 -- Create 'species' table
 CREATE TABLE species (
     id SERIAL NOT NULL PRIMARY KEY,
-    name VARCHAR(60),
+    name VARCHAR(60)
 );
 
 -- Delete species column from 'animals' table
@@ -31,9 +31,9 @@ ALTER TABLE animals DROP COLUMN species;
 -- Add species_id column to 'animals' table
 ALTER TABLE animals ADD species_id INT;
 -- Add foreign key to 'animals' table
-ALTER TABLE animals ADD FOREIGN KEY (species_id) REFERENCES species (id);
+ALTER TABLE animals ADD FOREIGN KEY(species_id) REFERENCES species(id);
 
 -- Add owner_id column to 'animals' table
 ALTER TABLE animals ADD owner_id INT;
 -- Add foreign key to 'animals' table
-ALTER TABLE animals ADD FOREIGN KEY (owner_id) REFERENCES owners (id);
+ALTER TABLE animals ADD FOREIGN KEY(owner_id) REFERENCES owners(id);

@@ -45,3 +45,17 @@ CREATE TABLE vets (
     age INT NOT NULL,
     date_of_graduation DATE NOT NULL
 );
+
+-- Create many-to-many relationship between 'species' and 'vets' tables
+CREATE TABLE specializations (
+    species_id INT NOT NULL REFERENCES species(id),
+    vet_id INT NOT NULL REFERENCES vets(id),
+    PRIMARY KEY (species_id, vet_id)
+);
+
+-- Create many-to-many relationship between 'animals' and 'vets' tables
+CREATE TABLE visits (
+    animal_id INT NOT NULL REFERENCES animals(id),
+    vet_id INT NOT NULL REFERENCES vets(id),
+    visit_date DATE NOT NULL
+);

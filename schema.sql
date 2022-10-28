@@ -48,8 +48,8 @@ CREATE TABLE vets (
 
 -- Create many-to-many relationship between 'species' and 'vets' tables
 CREATE TABLE specializations (
-    species_id INT NOT NULL REFERENCES species(id),
     vet_id INT NOT NULL REFERENCES vets(id),
+    species_id INT NOT NULL REFERENCES species(id),
     PRIMARY KEY (species_id, vet_id)
 );
 

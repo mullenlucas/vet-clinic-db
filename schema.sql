@@ -59,3 +59,38 @@ CREATE TABLE visits (
     vet_id INT NOT NULL REFERENCES vets(id),
     visit_date DATE NOT NULL
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Remove all NOT NULL constraints from your tables
+ALTER TABLE animals ALTER COLUMN name DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN date_of_birth DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN escape_attempts DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN neutered DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN weight_kg DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN full_name DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN age DROP NOT NULL;
+ALTER TABLE vets ALTER COLUMN name DROP NOT NULL;
+ALTER TABLE vets ALTER COLUMN age DROP NOT NULL;
+ALTER TABLE vets ALTER COLUMN date_of_graduation DROP NOT NULL;
+ALTER TABLE visits ALTER COLUMN visit_date DROP NOT NULL;
+ALTER TABLE visits ALTER COLUMN vet_id DROP NOT NULL;
+ALTER TABLE visits ALTER COLUMN animal_id DROP NOT NULL;
+ALTER TABLE specializations ALTER COLUMN vet_id DROP NOT NULL;
+ALTER TABLE specializations ALTER COLUMN species_id DROP NOT NULL;
+ALTER TABLE species ALTER COLUMN name DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN email DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN species_id DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN owner_id DROP NOT NULL;
+ALTER TABLE animals ALTER COLUMN id DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN id DROP NOT NULL;
+ALTER TABLE species ALTER COLUMN id DROP NOT NULL;
+ALTER TABLE vets ALTER COLUMN id DROP NOT NULL;
+ALTER TABLE visits ALTER COLUMN id DROP NOT NULL;
+ALTER TABLE specializations ALTER COLUMN id DROP NOT NULL;
+
+-- Create indexes
+CREATE INDEX animalsnvets_visits_idx ON visits (animals_id, vets_id);
+
+CREATE INDEX email_owners_idx ON owners (email);

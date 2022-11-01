@@ -77,20 +77,12 @@ ALTER TABLE vets ALTER COLUMN date_of_graduation DROP NOT NULL;
 ALTER TABLE visits ALTER COLUMN visit_date DROP NOT NULL;
 ALTER TABLE visits ALTER COLUMN vet_id DROP NOT NULL;
 ALTER TABLE visits ALTER COLUMN animal_id DROP NOT NULL;
-ALTER TABLE specializations ALTER COLUMN vet_id DROP NOT NULL;
-ALTER TABLE specializations ALTER COLUMN species_id DROP NOT NULL;
 ALTER TABLE species ALTER COLUMN name DROP NOT NULL;
 ALTER TABLE owners ALTER COLUMN email DROP NOT NULL;
 ALTER TABLE animals ALTER COLUMN species_id DROP NOT NULL;
 ALTER TABLE animals ALTER COLUMN owner_id DROP NOT NULL;
-ALTER TABLE animals ALTER COLUMN id DROP NOT NULL;
-ALTER TABLE owners ALTER COLUMN id DROP NOT NULL;
-ALTER TABLE species ALTER COLUMN id DROP NOT NULL;
-ALTER TABLE vets ALTER COLUMN id DROP NOT NULL;
-ALTER TABLE visits ALTER COLUMN id DROP NOT NULL;
-ALTER TABLE specializations ALTER COLUMN id DROP NOT NULL;
 
 -- Create indexes
-CREATE INDEX animalsnvets_visits_idx ON visits (animals_id, vets_id);
+CREATE INDEX animalsnvets_visits_idx ON visits (animal_id, vet_id);
 
 CREATE INDEX email_owners_idx ON owners (email);

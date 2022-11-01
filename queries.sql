@@ -185,8 +185,8 @@ DESC LIMIT 1;
 -- Performance queries
 \echo Performance queries:
 
-SELECT COUNT(*) FROM visits where animals_id = 4;
+SELECT COUNT(*) FROM visits where animal_id = 4;
 
-SELECT * FROM visits WHERE vets_id = 2;
+SELECT * FROM visits WHERE vet_id = 2;
 
 SELECT * FROM owners WHERE email = 'owner_18327@mail.com';
